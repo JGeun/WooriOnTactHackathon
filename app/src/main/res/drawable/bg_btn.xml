@@ -6,7 +6,7 @@
         android:radius="10dp"/>
 
     <solid
-        android:color="#3294F7"/>
+        android:color="@color/btnColor"/>
 
 
 </shape>

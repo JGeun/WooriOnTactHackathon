@@ -115,7 +115,7 @@
             android:id="@+id/child_profile_makePayButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_btn_child_profile"
+            android:background="@drawable/bg_btn"
             android:gravity="center"
             android:paddingVertical="10dp"
             android:visibility="gone">
@@ -133,7 +133,7 @@
             android:id="@+id/child_profile_returnPageButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/bg_btn_child_profile"
+            android:background="@drawable/bg_btn"
             android:gravity="center"
             android:paddingVertical="10dp"
             android:visibility="gone">
