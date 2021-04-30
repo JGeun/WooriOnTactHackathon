@@ -11,7 +11,7 @@ import jgeun.hackathon.wooriontact.R;
 public class StatusBarUtil {
     public enum StatusBarColorType {
         // 색 지정
-        //WHITE_STATUS_BAR(R.color.realWhite),
+        WHITE_STATUS_BAR(R.color.white),
         MAIN_COLOR_STATUS_BAR(R.color.mainColor),
         DEFAULT_STATUS_BAR(R.color.white);
 
@@ -31,10 +31,10 @@ public class StatusBarUtil {
             // 상태바 텍스트 색 지정
             if(colorType.getBackgroundColorId() == R.color.white) {
                 // 흰색
-                activity.getWindow().getDecorView().setSystemUiVisibility(0);
+                activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
             } else {
                 // 검은색
-                activity.getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+                activity.getWindow().getDecorView().setSystemUiVisibility(0);
             }
 
             // 상태바 배경 색 지정
