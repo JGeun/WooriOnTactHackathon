@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">WooriOnTact</string>
+    <string name="app_name">[해커톤]안심페이</string>
+
+    <string name="kakao_native_appkey">8c28b80b7f45910fda90da2ef27f7ce3</string>
 </resources>
