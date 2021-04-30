@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -17,19 +18,23 @@ import jgeun.hackathon.wooriontact.R;
 import jgeun.hackathon.wooriontact.util.StatusBarUtil;
 
 public class ChildMyPageActivity extends AppCompatActivity {
-
+    private SharedPreferences sharedPreferences;
     private Context mConText;
     private BottomNavigationView bottomNavigationView;
     private FragmentManager fm;
     private FragmentTransaction ft;
 
-    private HomeFragment homeFragment = new HomeFragment();
+    private HomeFragment homeFragment;
     private CardFragment cardFragment = new CardFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_my_page);
+
+        sharedPreferences = this.getSharedPreferences("pay", Context.MODE_PRIVATE);
+        String name = sharedPreferences.getString("이름", "이름");
+        homeFragment = new HomeFragment(name);
 
         mConText = this;
         setFrag(1);

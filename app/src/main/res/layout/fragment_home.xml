@@ -25,6 +25,7 @@
         app:layout_constraintStart_toEndOf="@id/home_ic_profile">
 
         <TextView
+            android:id="@+id/home_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nanum_bold"
@@ -116,6 +117,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/home_tv_missionTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:overScrollMode="never"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

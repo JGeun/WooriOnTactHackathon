@@ -2,7 +2,9 @@ package jgeun.hackathon.wooriontact.child.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.UserManager;
 import android.util.Log;
@@ -31,12 +33,16 @@ public class ChildSignUpActivity extends AppCompatActivity implements View.OnCli
     private MaterialCheckBox checkBox3;
     private MaterialCheckBox checkBox4;
     private ImageView kakaoLogin;
+    public SharedPreferences sharedPreferences = null;
+    private SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child_sign_up);
 
+        sharedPreferences = this.getSharedPreferences("pay", Context.MODE_PRIVATE);;
+        editor = sharedPreferences.edit();
         checkBox1 = findViewById(R.id.child_signup_checkBox1);
         checkBox2 = findViewById(R.id.child_signup_checkBox2);
         checkBox3 = findViewById(R.id.child_signup_checkBox3);
@@ -83,7 +89,11 @@ public class ChildSignUpActivity extends AppCompatActivity implements View.OnCli
                                 "\n닉네임: " + profile.getNickname());
                         Intent profileIntent = new Intent(this, ChildProfileActivity.class);
                         profileIntent.putExtra("name", profile.getNickname());
+                        editor.putString("이름", profile.getNickname());
+                        editor.putBoolean("로그인", true);
+                        editor.apply();
                         startActivity(profileIntent);
+
                     }
                     return null;
                 });
