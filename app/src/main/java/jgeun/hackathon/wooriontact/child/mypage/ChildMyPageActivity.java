@@ -7,10 +7,14 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -25,7 +29,7 @@ public class ChildMyPageActivity extends AppCompatActivity {
     private FragmentTransaction ft;
 
     private HomeFragment homeFragment;
-    private CardFragment cardFragment = new CardFragment();
+    private CardFragment cardFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,7 @@ public class ChildMyPageActivity extends AppCompatActivity {
         sharedPreferences = this.getSharedPreferences("pay", Context.MODE_PRIVATE);
         String name = sharedPreferences.getString("이름", "이름");
         homeFragment = new HomeFragment(name);
-
+        cardFragment = new CardFragment(this, getIntent().getStringExtra("picture"));
         mConText = this;
         setFrag(1);
 
@@ -82,4 +86,9 @@ public class ChildMyPageActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    public void showCustomToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
 }

@@ -12,9 +12,8 @@
         android:roundIcon="@mipmap/ansim_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.WooriOnTact">
-        <activity android:name=".child.mypage.ChildMyPageActivity">
-
-        </activity>
+        <activity android:name=".CaptureActivity"></activity>
+        <activity android:name=".child.mypage.ChildMyPageActivity"></activity>
         <activity android:name=".child.makeCard.MakeCardActivity">
 
         </activity>
@@ -39,7 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>
