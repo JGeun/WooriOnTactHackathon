@@ -2,6 +2,7 @@ package jgeun.hackathon.wooriontact.child.mypage;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -12,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -31,6 +33,7 @@ public class ChildMyPageActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
     private CardFragment cardFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,7 @@ public class ChildMyPageActivity extends AppCompatActivity {
         String name = sharedPreferences.getString("이름", "이름");
         homeFragment = new HomeFragment(name);
         cardFragment = new CardFragment(this, getIntent().getStringExtra("picture"));
+
         mConText = this;
         setFrag(1);
 
@@ -77,12 +81,15 @@ public class ChildMyPageActivity extends AppCompatActivity {
         switch (n) {
             case 0:
                 ft.replace(R.id.main_frame, cardFragment);
-
                 ft.commit();
+                //creditMenuItem.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.profile_user_blue, null));
+                //profileMenuItem.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.profile_user, null));
                 break;
             case 1:
                 ft.replace(R.id.main_frame, homeFragment);
                 ft.commit();
+                //creditMenuItem.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.profile_user, null));
+                //profileMenuItem.setIcon(ResourcesCompat.getDrawable(getResources(), R.drawable.profile_user_blue, null));
                 break;
         }
     }

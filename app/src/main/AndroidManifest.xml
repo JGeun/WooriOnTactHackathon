@@ -13,9 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WooriOnTact">
         <activity android:name=".CaptureActivity"></activity>
-        <activity android:name=".child.mypage.ChildMyPageActivity"></activity>
-        <activity android:name=".child.makeCard.MakeCardActivity">
+        <activity android:name=".child.mypage.ChildMyPageActivity">
 
+        </activity>
+        <activity android:name=".child.makeCard.MakeCardActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".child.profile.ChildProfileActivity" />
         <activity android:name=".child.signup.ChildSignUpActivity">
@@ -32,11 +38,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".child.splash.ChildSplashActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
 

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Base64;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -173,7 +174,14 @@ public class MakeCardActivity extends AppCompatActivity implements View.OnClickL
                 break;
             case R.id.child_makecard_btn_finish:
                 Bitmap bitmap = takeScreenshot();
-                Bitmap cardBitmap = Bitmap.createBitmap(bitmap, 100, 600, 880, 530);
+                DisplayMetrics metrics = getResources().getDisplayMetrics();
+
+                int screenHeight = metrics.heightPixels;
+                int screenWeight = metrics.widthPixels;
+
+                //Bitmap cardBitmap = Bitmap.createBitmap(bitmap, 80, 600, 880, 530);
+                Bitmap cardBitmap = Bitmap.createBitmap(bitmap, 80, 600, 880, 530);
+
                 Intent intent = new Intent(this, ChildMyPageActivity.class);
                 intent.putExtra("picture", BitmapToString(cardBitmap));
                 startActivity(intent);
