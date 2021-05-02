@@ -31,9 +31,9 @@ public class ChildSplashActivity extends AppCompatActivity {
 
     public class startIntent implements Runnable {
         public void run() {
-           /* if (sharedPreferences.getBoolean("로그인", false))
+            if (sharedPreferences.getBoolean("로그인", false))
                 startActivity(new Intent(getApplicationContext(), ChildMyPageActivity.class));
-            else*/
+            else
                 startActivity(new Intent(getApplicationContext(), ChildSignUpActivity.class));
         }
     }

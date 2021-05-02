@@ -41,6 +41,7 @@ public class ChildMyPageActivity extends AppCompatActivity {
 
         sharedPreferences = this.getSharedPreferences("pay", Context.MODE_PRIVATE);
         String name = sharedPreferences.getString("이름", "이름");
+
         homeFragment = new HomeFragment(name);
         cardFragment = new CardFragment(this, getIntent().getStringExtra("picture"));
 

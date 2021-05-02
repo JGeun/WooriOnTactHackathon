@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -52,10 +54,16 @@ public class MakeCardActivity extends AppCompatActivity implements View.OnClickL
     private int selectButtonNumber = 1;
     private int imageNumber = 1;
 
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_card);
+
+        sharedPreferences = this.getSharedPreferences("pay", Context.MODE_PRIVATE);;
+        editor = sharedPreferences.edit();
 
         firstButton = findViewById(R.id.card_firstCharacter);
         firstButton.setOnClickListener(this);
@@ -184,6 +192,8 @@ public class MakeCardActivity extends AppCompatActivity implements View.OnClickL
 
                 Intent intent = new Intent(this, ChildMyPageActivity.class);
                 intent.putExtra("picture", BitmapToString(cardBitmap));
+                editor.putString("picture", BitmapToString(cardBitmap));
+                editor.apply();
                 startActivity(intent);
                 finish();
                 break;

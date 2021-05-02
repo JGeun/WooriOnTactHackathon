@@ -55,6 +55,7 @@ public class ChildProfileActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.child_profile_returnPageButton:
                 kakaoUnlink();
+                finish();
                 break;
         }
     }
@@ -66,7 +67,6 @@ public class ChildProfileActivity extends AppCompatActivity implements View.OnCl
             }
             else {
                 Log.i("확인", "로그아웃 성공. SDK에서 토큰 삭제됨");
-                finish();
             }
             return null;
         });

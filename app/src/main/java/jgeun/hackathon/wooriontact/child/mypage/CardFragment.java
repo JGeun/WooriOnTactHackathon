@@ -2,6 +2,7 @@ package jgeun.hackathon.wooriontact.child.mypage;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -31,6 +32,8 @@ public class CardFragment extends Fragment {
     private TextView timerText;
     private String imageString;
 
+    private SharedPreferences sharedPreferences;
+
     public CardFragment(Context context, String imageString) {
         this.imageString = imageString;
         this.context =context;
@@ -41,15 +44,22 @@ public class CardFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_card, container, false);
+        sharedPreferences = getActivity().getSharedPreferences("pay", Context.MODE_PRIVATE);
         timerText = view.findViewById(R.id.card_timer);
 
         ImageView cardImageView = view.findViewById(R.id.card_childCard);
-        Bitmap cardImageBitmap = StringToBitmap(imageString);
+        Bitmap cardImageBitmap;
+        if(imageString != null && !imageString.equals(""))
+            cardImageBitmap = StringToBitmap(imageString);
+        else
+            cardImageBitmap = StringToBitmap(sharedPreferences.getString("picture", ""));
+
         Matrix rotateMatrix = new Matrix();
         rotateMatrix.postRotate(90); //-360~360
 
         Bitmap rotateBitmap = Bitmap.createBitmap(cardImageBitmap, 0, 0,
                 cardImageBitmap.getWidth(), cardImageBitmap.getHeight(), rotateMatrix, false);
+
 
         cardImageView.setImageBitmap(rotateBitmap);
         startTimerTask();

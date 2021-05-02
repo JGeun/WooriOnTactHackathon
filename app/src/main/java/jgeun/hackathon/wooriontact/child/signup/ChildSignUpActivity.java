@@ -60,7 +60,7 @@ public class ChildSignUpActivity extends AppCompatActivity implements View.OnCli
                 if(isValidate()){
                     kakaoLogin();
                 }else{
-                    Toast.makeText(this, "모든 동의해 주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "모두 동의해 주세요.", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
@@ -78,27 +78,31 @@ public class ChildSignUpActivity extends AppCompatActivity implements View.OnCli
         UserApiClient.getInstance().loginWithKakaoTalk(ChildSignUpActivity.this, (token, loginError) -> {
             if (loginError != null) {
                 Log.e("확인", "로그인 실패", loginError);
+                Toast.makeText(this, "플레이스토어 문제로 임의의 이름 대체합니다.", Toast.LENGTH_SHORT).show();
+                startIntent("최아이");
             } else if(token != null) {
                 Log.d("확인", "로그인 성공");
                 TalkApiClient.getInstance().profile((profile, error) -> {
-
                     if(error != null){
                         Log.e("확인", "카카오톡 프로필 가져오기 실패", error);
                     }else if (profile != null) {
                         Log.i("확인", "카카오톡 프로필 가져오기 성공" +
                                 "\n닉네임: " + profile.getNickname());
-                        Intent profileIntent = new Intent(this, ChildProfileActivity.class);
-                        profileIntent.putExtra("name", profile.getNickname());
-                        editor.putString("이름", profile.getNickname());
-                        editor.putBoolean("로그인", true);
-                        editor.apply();
-                        startActivity(profileIntent);
-
+                        startIntent(profile.getNickname());
                     }
                     return null;
                 });
             }
             return null;
         });
+    }
+
+    public void startIntent(String name){
+        Intent profileIntent = new Intent(this, ChildProfileActivity.class);
+        profileIntent.putExtra("name", name);
+        editor.putString("이름", name);
+        editor.putBoolean("로그인", true);
+        editor.apply();
+        startActivity(profileIntent);
     }
 }
