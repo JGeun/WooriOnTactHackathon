@@ -6,5 +6,6 @@
         android:icon="@drawable/bg_menu_credit" />
 
     <item android:id="@+id/menu_profile"
-        android:icon="@drawable/bg_menu_profile_user" />
+        android:icon="@drawable/bg_menu_profile_user"
+        android:checked="true"/>
 </menu>

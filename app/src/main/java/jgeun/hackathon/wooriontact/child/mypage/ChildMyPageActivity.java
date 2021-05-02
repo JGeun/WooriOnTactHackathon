@@ -48,8 +48,10 @@ public class ChildMyPageActivity extends AppCompatActivity {
         mConText = this;
         setFrag(1);
 
+
         bottomNavigationView = findViewById(R.id.child_mypage_bottomNavi);
         bottomNavigationView.setItemIconTintList(null);
+        bottomNavigationView.setSelectedItemId(R.id.menu_profile);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
