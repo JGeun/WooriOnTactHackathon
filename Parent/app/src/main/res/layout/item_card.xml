@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/info_framelayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_marginLeft="@dimen/pageMarginAndOffset"
+    android:layout_marginRight="@dimen/pageMarginAndOffset"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/card_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:src="@drawable/card1"/>
+
+    <TextView
+        android:id="@+id/card_accountNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 - 23295 - *****"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/nanum_bold"
+        android:layout_gravity="center"
+        android:layout_marginTop="55dp"/>
+
+    <TextView
+        android:id="@+id/card_accountCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="위비모바일통장"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:fontFamily="@font/nanum"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"/>
+
+
+</FrameLayout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingHorizontal="35dp"
+    android:paddingVertical="30dp"
+    tools:context=".child.makeCard.MakeCardActivity">
+
+    <ImageView
+        android:id="@+id/card_titleImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/hi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/card_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanum_bold"
+        android:text="나만의 카드를"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@id/card_titleImage"
+        app:layout_constraintTop_toBottomOf="@id/card_titleImage" />
+
+    <TextView
+        android:id="@+id/card_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nanum_bold"
+        android:text="만들어봐!"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="@id/card_title1"
+        app:layout_constraintTop_toBottomOf="@id/card_title1" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_makeField"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_card_child_makecard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_title2">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/woori_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/card_middleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_bold"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/card_firstImage"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bugi_big" />
+
+        <ImageView
+            android:id="@+id/card_secondImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/dak" />
+
+        <ImageView
+            android:id="@+id/card_thirdImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:src="@drawable/jji_big" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/card_buttonTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="원하는 캐릭터를"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/card_makeField"
+        app:layout_constraintTop_toBottomOf="@id/card_makeField" />
+
+    <TextView
+        android:id="@+id/card_buttonTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="골라주세요!"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/card_buttonTitle1"
+        app:layout_constraintTop_toBottomOf="@id/card_buttonTitle1" />
+
+
+    <ImageView
+        android:id="@+id/card_firstCharacter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_choose_character"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toEndOf="@id/card_buttonTitle1"
+        app:layout_constraintTop_toBottomOf="@id/card_makeField" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/card_selectField"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/box_mid"
+        app:layout_constraintBottom_toTopOf="@id/card_firstCharacter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card_makeField"
+        android:visibility="invisible"
+        tools:visibility="invisible">
+
+        <ImageView
+            android:id="@+id/card_character1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/hi_blue"
+            app:layout_constraintEnd_toStartOf="@+id/card_character2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/card_character2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/bugi_big"
+            app:layout_constraintEnd_toStartOf="@+id/card_character3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character1"
+            app:layout_constraintTop_toTopOf="@id/card_character1" />
+
+        <ImageView
+            android:id="@+id/card_character3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/jji_big"
+            app:layout_constraintEnd_toStartOf="@+id/card_character4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character2"
+            app:layout_constraintTop_toTopOf="@id/card_character2" />
+
+        <ImageView
+            android:id="@+id/card_character4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/dak"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character3"
+            app:layout_constraintTop_toTopOf="@id/card_character3" />
+
+        <ImageView
+            android:id="@+id/card_character5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/boy"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/card_character6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_character1" />
+
+        <ImageView
+            android:id="@+id/card_character6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/bugi2"
+            app:layout_constraintEnd_toStartOf="@+id/card_character7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character5"
+            app:layout_constraintTop_toTopOf="@id/card_character5" />
+
+        <ImageView
+            android:id="@+id/card_character7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/yang"
+            app:layout_constraintEnd_toStartOf="@+id/card_character8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character6"
+            app:layout_constraintTop_toTopOf="@id/card_character5" />
+
+        <ImageView
+            android:id="@+id/card_character8"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_choose_character"
+            android:padding="5dp"
+            android:src="@drawable/jji2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_character7"
+            app:layout_constraintTop_toTopOf="@id/card_character5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/card_secondCharacter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_choose_character"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toEndOf="@id/card_firstCharacter"
+        app:layout_constraintTop_toTopOf="@id/card_firstCharacter" />
+
+
+    <ImageView
+        android:id="@+id/card_thirdCharacter"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_choose_character"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintStart_toEndOf="@id/card_secondCharacter"
+        app:layout_constraintTop_toTopOf="@id/card_secondCharacter" />
+
+    <LinearLayout
+        android:id="@+id/card_editField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/card_thirdCharacter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원하는 문구를"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="입력해주세요!"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edittext_child_makecard"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingHorizontal="3dp"
+            android:paddingVertical="3dp">
+
+            <EditText
+                android:id="@+id/card_inputMiddleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ellipsize="end"
+                android:ems="12"
+                android:inputType="text|textNoSuggestions"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp" />
+
+            <TextView
+                android:id="@+id/card_textCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="/10" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/child_makecard_btn_finish"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/bg_btn"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_editField"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nanum_bold"
+            android:text="카드 디자인 완성"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/two_choice_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_dialog_payment"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingVertical="40dp"
+        android:paddingHorizontal="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="결제가 요청 되었습니다"
+            android:textColor="@color/mainColor"
+            android:textSize="24sp"
+            android:fontFamily="@font/nanum_bold"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 요청 분류 : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:id="@+id/payment_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="설정 금액 초과"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 요청 장소 : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:id="@+id/payment_place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="서울특별시 금천구"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 결제 요청자 : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:id="@+id/payment_requestor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="홈플러스"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- 요청 금액 : "
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+
+            <TextView
+                android:id="@+id/payment_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80,000원"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:fontFamily="@font/nanum"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/payment_ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/check"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="40dp"/>
+
+    <ImageView
+        android:id="@+id/payment_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/remove"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

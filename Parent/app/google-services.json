@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "973193742325",
+    "project_id": "wooriontact",
+    "storage_bucket": "wooriontact.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973193742325:android:c45e115b994a79d3cb02bc",
+        "android_client_info": {
+          "package_name": "jgeun.hackathon.wooriontact_parent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973193742325-6e76fag95f08hkd1af9ngcifaqbrafrr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jgeun.hackathon.wooriontact_parent",
+            "certificate_hash": "9c3af9222540dcb94bdb29601f5518a2d966e353"
+          }
+        },
+        {
+          "client_id": "973193742325-3v9o1rsg47nbs06neb8s9mqng9hh0j1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQwjwWrk2maZ1S3USSIA5YjEPj8XXcAFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973193742325-3v9o1rsg47nbs06neb8s9mqng9hh0j1l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

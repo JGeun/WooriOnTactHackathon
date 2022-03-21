@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jgeun.hackathon.wooriontact_parent">
+    <!-- retrofit 사용을 위한 인터넷 사용권한 추가 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/parent_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/parent_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WooriOnTact_Parent">
+        <activity android:name=".src.login.LoginActivity"></activity>
+        <activity android:name=".src.mypage.MyPageActivity"></activity>
+        <activity android:name=".src.child.CardSettingActivity" />
+        <activity
+            android:name=".src.child.ChildInfoActivity"
+            android:windowSoftInputMode="adjustPan">
+
+        </activity>
+        <activity android:name=".src.child.RegisterChildActivity">
+
+        </activity>
+        <activity android:name=".src.card.SelectMyCardActivity"></activity>
+        <activity android:name=".src.signup.SignUpActivity" />
+        <activity android:name=".src.splash.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jgeun.hackathon.wooriontact">
+    <!-- 인터넷 사용 권한 설정 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".config.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ansim_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ansim_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.WooriOnTact">
+        <activity android:name=".CaptureActivity"></activity>
+        <activity android:name=".child.mypage.ChildMyPageActivity">
+
+        </activity>
+        <activity android:name=".child.makeCard.MakeCardActivity">
+
+        </activity>
+        <activity android:name=".child.profile.ChildProfileActivity" />
+        <activity android:name=".child.signup.ChildSignUpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth“ -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao8c28b80b7f45910fda90da2ef27f7ce3" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".child.splash.ChildSplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
+        </activity>
+    </application>
+
+</manifest>
